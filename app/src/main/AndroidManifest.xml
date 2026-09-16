@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Scoped Storage & Document Tree permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+
+    <!-- Android 11+ (API 30+) Package Visibility Queries -->
+    <queries>
+        <!-- Allows querying installed Minecraft Bedrock and custom launchers -->
+        <package android:name="com.mojang.minecraftpe" />
+        <package android:name="com.mojang.minecraftpreview" />
+        <package android:name="com.mojang.minecraftpe.edu" />
+        <package android:name="net.kdt.pojavlaunch" />
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="MC Pack Importer"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MinecraftImporter">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MinecraftImporter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Intent Filter to open .mcpack and .mcaddon directly from File Managers / Browsers -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern=".*\\.mcpack" />
+                <data android:pathPattern=".*\\.mcaddon" />
+                <data android:host="*" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

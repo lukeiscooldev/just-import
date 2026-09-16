@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Top Face -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M54,26 L82,41 L54,56 L26,41 Z" />
+    <!-- Left Face -->
+    <path
+        android:fillColor="#059669"
+        android:pathData="M26,41 L54,56 L54,82 L26,67 Z" />
+    <!-- Right Face -->
+    <path
+        android:fillColor="#047857"
+        android:pathData="M54,56 L82,41 L82,67 L54,82 Z" />
+    <!-- Center Latch / Detail -->
+    <path
+        android:fillColor="#34D399"
+        android:pathData="M51,53 L57,53 L57,61 L51,61 Z" />
+</vector>
